@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Xonstant</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/Xonstant Logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/Xonstant Logo.png" alt="Coaching Logo">
+        </div>
+        <span>Xonstant</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" style="color:var(--white);">Home</a>
+        <a href="socials.html">Socials</a>
+        <a href="faq.html">FAQ</a>
+        <div class="dropdown">
+          <button class="dropbtn">Reviews</button>
+          <ul class="dropdown-content">
+            <li><a href="Reviews.html" class="active">Customer Feedback</a></li>
+            <li><a href="#" onclick="openPopup('popupOverlayReview')">Drop Your Feedback!</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Review Popup -->
+  <div class="popup-overlay" id="popupOverlayReview">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup('popupOverlayReview')">Close</button>
+      <iframe src="https://forms.gle/w61ZbRdi8GaAktZ56"></iframe>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-left">
+        <div class="eyebrow">VALORANT & MOBILE LEGENDS</div>
+        <h1>VALORANT &<br> MOBILE LEGENDS<br> COACHING</h1>
+        <p class="lead">
+          Improve your skills and climb the ranks with personalized coaching. One-on-one sessions, replay reviews, and strategy development tailored to your playstyle.
+        </p>
+        <a class="cta" href="#" onclick="openPopup('popupOverlayBook')">Book Now</a>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-frame">
+          <img src="images/Mini Project 2.png" alt="Illustration of two game characters (Valorant & Mobile Legends style)">
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Popup -->
+    <div class="popup-overlay" id="popupOverlayBook">
+      <div class="popup-content">
+        <button class="close-btn" onclick="closePopup('popupOverlayBook')">Close</button>
+        <iframe src="https://forms.gle/2r5qTEC9bVGbgnLK8"></iframe>
+      </div>
+    </div>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+      <h2>COACHING PRICING</h2>
+      <p class="leadprice">Choose your plan based on your goals and schedule. Seasonal discounts available!</p>
+
+      <div class="pricing-grid">
+        <!-- Valorant Pricing -->
+        <div class="pricing-card">
+          <h3>Valorant Coaching</h3>
+          <ul>
+            <li><strong>1 Week:</strong> RM20</li>
+            <li><strong>1 Act (2–3 Months):</strong> RM160</li>
+          </ul>
+          <div class="seasonal">
+            <h4>🎃 Halloween Promo</h4>
+            <ul>
+              <li><strong>Week:</strong> RM18 <span class="discount">(-10%)</span></li>
+              <li><strong>Act:</strong> RM128 <span class="discount">(-20%)</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MLBB Pricing -->
+        <div class="pricing-card">
+          <h3>Mobile Legends Coaching</h3>
+          <ul>
+            <li><strong>1 Week:</strong> RM10</li>
+            <li><strong>1 Season:</strong> RM120</li>
+          </ul>
+          <div class="seasonal">
+            <h4>🎃 Halloween Promo</h4>
+            <ul>
+              <li><strong>Week:</strong> RM9 <span class="discount">(-10%)</span></li>
+              <li><strong>Season:</strong> RM96 <span class="discount">(-20%)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div style="flex:1;">
+        <h2>ABOUT XONSTANT COACHING</h2>
+        <p>
+          Our coaching services are designed to help players of all skill levels improve their gameplay. We focus on fundamentals, decision-making, map/rotation awareness, mechanical improvements, and ranked climb strategies.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      If you encounter any bugs or issues, please report them to
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thexonstant@gmail.com" style="color:var(--muted); text-decoration:underline;">
+        thexonstant@gmail.com
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("click", e => {
+      const btn = e.target.closest(".dropbtn");
+      const dropdown = document.querySelector(".dropdown-content");
+      if (btn) dropdown.classList.toggle("show");
+      else dropdown.classList.remove("show");
+    });
+
+    function openPopup(popupId) {
+      const popup = document.getElementById(popupId);
+      if (popup) popup.style.display = 'block';
+    }
+
+    function closePopup(popupId) {
+      const popup = document.getElementById(popupId);
+      if (popup) popup.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
